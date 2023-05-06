@@ -30,7 +30,7 @@ namespace HomebrewBlockChain
             while (!stop)
             {
                 Console.WriteLine("Enter command:");
-                Console.WriteLine("(M)ine | e(X)it | (P)rint Chain | (R)esolve Conflicts");
+                Console.WriteLine("(M)ine | e(X)it | (P)rint Chain | (R)egister Node | (L)ist All Nodes");
                 command = Console.ReadLine();
 
                 switch (command)
@@ -44,6 +44,16 @@ namespace HomebrewBlockChain
                     case "P":
                         Console.WriteLine("Printing full chain...");
                         Console.WriteLine(blockChain.GetFullChain());
+                        break;
+                    case "r":
+                    case "R":
+                        Console.WriteLine("Registering node...");
+                        blockChain.RegisterNode("127.0.0.1");
+                        break;
+                    case "l":
+                    case "L":
+                        Console.WriteLine("Listing all nodes...");
+                        
                         break;
                     case "x":
                     case "X":
