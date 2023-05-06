@@ -2,8 +2,8 @@ C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChain
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\bin\Debug\BlockChainModel.pdb
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\bin\Debug\Newtonsoft.Json.dll
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\bin\Debug\Newtonsoft.Json.xml
-C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\obj\Debug\BlockChainModel.csprojAssemblyReference.cache
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\obj\Debug\BlockChainModel.csproj.CoreCompileInputs.cache
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\obj\Debug\BlockChainModel.csproj.CopyComplete
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\obj\Debug\BlockChainModel.dll
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\obj\Debug\BlockChainModel.pdb
+C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\BlockChainModel\obj\Debug\BlockChainModel.csproj.AssemblyReference.cache

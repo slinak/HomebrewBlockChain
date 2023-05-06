@@ -5,8 +5,8 @@ C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBl
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\bin\Debug\Newtonsoft.Json.dll
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\bin\Debug\BlockChainModel.pdb
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\bin\Debug\Newtonsoft.Json.xml
-C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\obj\Debug\HomebrewBlockChain.csprojAssemblyReference.cache
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\obj\Debug\HomebrewBlockChain.csproj.CoreCompileInputs.cache
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\obj\Debug\HomebrewBlockChain.csproj.CopyComplete
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\obj\Debug\HomebrewBlockChain.exe
 C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\obj\Debug\HomebrewBlockChain.pdb
+C:\Users\merse\Documents\GitHub\HomebrewBlockChain\HomebrewBlockChain\HomebrewBlockChain\obj\Debug\HomebrewBlockChain.csproj.AssemblyReference.cache
