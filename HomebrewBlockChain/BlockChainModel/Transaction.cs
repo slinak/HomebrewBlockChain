@@ -8,9 +8,9 @@ namespace BlockChainModel
 {
     public class Transaction
     {
-        public int amount { get; set; }
-        public string recipient { get; set; }
-        public string sender { get; set; }
+        public int Amount { get; set; }
+        public string Recipient { get; set; }
+        public string Sender { get; set; }
 
     }
 }

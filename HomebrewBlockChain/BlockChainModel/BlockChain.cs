@@ -12,11 +12,11 @@ namespace BlockChainModel
 {
     public class BlockChain
     {
-        public List<Transaction> currentTransactions = new List<Transaction>();
-        public List<Block> blockChain = new List<Block>();
-        public List<Node> nodes = new List<Node>();
+        public List<Transaction> CurrentTransactions = new List<Transaction>();
+        public List<Block> Chain = new List<Block>();
+        public List<Node> Nodes = new List<Node>();
 
-        public Block lastBlock => blockChain.Last();
+        public Block lastBlock => Chain.Last();
 
         public string nodeID { get; set; }
 
@@ -28,22 +28,22 @@ namespace BlockChainModel
 
         public void RegisterNode(string address)
         {
-            nodes.Add(new Node { address = new Uri(address) });
+            Nodes.Add(new Node { Address = new Uri(address) });
         }
 
         public Block CreateNewBlock(int proof, string previousHash = null)
         {
             var block = new Block
             {
-                index = blockChain.Count,
-                timeStamp = DateTime.UtcNow,
-                transactions = currentTransactions.ToList(),
-                proof = proof,
-                previousHash = previousHash ?? GetHash(blockChain.Last())
+                Index = Chain.Count,
+                CreationTime = DateTime.UtcNow,
+                Transactions = CurrentTransactions.ToList(),
+                Proof = proof,
+                PreviousHash = previousHash ?? GetHash(Chain.Last())
             };
 
-            currentTransactions.Clear();
-            blockChain.Add(block);
+            CurrentTransactions.Clear();
+            Chain.Add(block);
             return block;
         }
 
@@ -57,10 +57,10 @@ namespace BlockChainModel
             {
                 block = chain.ElementAt(currentIndex);
 
-                if (block.previousHash != GetHash(lastBlock))
+                if (block.PreviousHash != GetHash(lastBlock))
                     return false;
 
-                if (!IsProofValid(lastBlock.proof, block.proof, lastBlock.previousHash))
+                if (!IsProofValid(lastBlock.Proof, block.Proof, lastBlock.PreviousHash))
                     return false;
 
                 lastBlock = block;
@@ -73,11 +73,11 @@ namespace BlockChainModel
         public bool ResolveConflicts()
         {
             List<Block> newChain = null;
-            int maxLength = blockChain.Count;
+            int maxLength = Chain.Count;
 
-            foreach (Node node in nodes)
+            foreach (Node node in Nodes)
             {
-                var url = new Uri(node.address, "/chain");
+                var url = new Uri(node.Address, "/chain");
                 var request = (HttpWebRequest)WebRequest.Create(url);
                 var response = (HttpWebResponse)request.GetResponse();
 
@@ -91,7 +91,7 @@ namespace BlockChainModel
                     string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
                     var data = JsonConvert.DeserializeAnonymousType(json, model);
 
-                    if (data.chain.Count > blockChain.Count && IsChainValid(data.chain))
+                    if (data.chain.Count > Chain.Count && IsChainValid(data.chain))
                     {
                         maxLength = data.chain.Count;
                         newChain = data.chain;
@@ -101,7 +101,7 @@ namespace BlockChainModel
 
             if (newChain != null)
             {
-                blockChain = newChain;
+                Chain = newChain;
                 return true;
             }
 
@@ -141,14 +141,14 @@ namespace BlockChainModel
         {
             var transaction = new Transaction
             {
-                sender = sender,
-                recipient = recipient,
-                amount = amount
+                Sender = sender,
+                Recipient = recipient,
+                Amount = amount
             };
 
-            currentTransactions.Add(transaction);
+            CurrentTransactions.Add(transaction);
 
-            return lastBlock != null ? lastBlock.index + 1 : 0;
+            return lastBlock != null ? lastBlock.Index + 1 : 0;
         }
 
         public bool IsProofValid(int lastProof, int proof, string previousHash)
@@ -162,14 +162,14 @@ namespace BlockChainModel
         {
             return JsonConvert.SerializeObject(new
             {
-                chain = blockChain.ToArray(),
-                length = blockChain.Count
+                chain = Chain.ToArray(),
+                length = Chain.Count
             });
         }
 
         public string MineBlock()
         {
-            int proof = CreateProofOfWork(lastBlock.proof, lastBlock.previousHash);
+            int proof = CreateProofOfWork(lastBlock.Proof, lastBlock.PreviousHash);
 
             CreateTransaction(sender: "0", recipient: nodeID, amount: 1);
             Block block = CreateNewBlock(proof);
@@ -177,10 +177,10 @@ namespace BlockChainModel
             return JsonConvert.SerializeObject(new
             {
                 Message = "New Block Created",
-                Index = block.index,
-                Transactions = block.transactions.ToArray(),
-                Proof = block.proof,
-                PreviousHash = block.previousHash
+                Index = block.Index,
+                Transactions = block.Transactions.ToArray(),
+                Proof = block.Proof,
+                PreviousHash = block.PreviousHash
             });
         }
     }

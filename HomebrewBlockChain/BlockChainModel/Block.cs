@@ -8,15 +8,15 @@ namespace BlockChainModel
 {
     public class Block
     {
-        public int index { get; set; }
-        public DateTime timeStamp { get; set; }
-        public List<Transaction> transactions { get; set; }
-        public int proof { get; set; }
-        public string previousHash { get; set; }
+        public int Index { get; set; }
+        public DateTime CreationTime { get; set; }
+        public List<Transaction> Transactions { get; set; }
+        public int Proof { get; set; }
+        public string PreviousHash { get; set; }
 
         public override string ToString()
         {
-            return $"{index} [{timeStamp.ToString("yyyy-MM-dd HH:mm:ss")}] Proof: {proof} | PrevHash: {previousHash} | Trx: {transactions.Count}";
+            return $"{Index} [{CreationTime.ToString("yyyy-MM-dd HH:mm:ss")}] Proof: {Proof} | PrevHash: {PreviousHash} | Trx: {Transactions.Count}";
         }
     }
 }

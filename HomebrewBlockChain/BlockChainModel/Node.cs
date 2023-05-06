@@ -8,6 +8,6 @@ namespace BlockChainModel
 {
     public class Node
     {
-        public Uri address { get; set; }
+        public Uri Address { get; set; }
     }
 }
